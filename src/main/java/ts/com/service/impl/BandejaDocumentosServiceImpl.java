@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import sistema.facturador.dao.DocumentoDao;
@@ -35,25 +34,16 @@ public class BandejaDocumentosServiceImpl implements BandejaDocumentosService {
 
     private static final Logger log = LoggerFactory.getLogger(BandejaDocumentosServiceImpl.class);
 
-    @Inject
     private DocumentoDao documentoDao;
 
-    @Inject
     private ParametroDao parametroDao;
 
-    @Inject
     private ErrorDao errorDao;
 
-    @Inject
     private GenerarDocumentosService generarDocumentosService;
 
-    @Inject
-    private ReporteDocumentosService reporteDocumentosService;
-
-    @Inject
     private ComunesService comunesService;
 
-    @Inject
     GestionarProcesosBatchJob gestionarProcesosBatchJob;
 
     public BandejaDocumentosServiceImpl() {

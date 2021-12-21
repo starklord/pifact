@@ -2,16 +2,12 @@ package ts.com.server.facturador.dao;
 
 
 import javax.annotation.ManagedBean;
-import javax.inject.Inject;
-import org.mybatis.cdi.Mapper;
 import sistema.facturador.mybatis.mappers.ErrorMap;
 import sistema.facturador.persistence.Error;
 import sistema.facturador.util.FacturadorUtil;
 
 @ManagedBean
 public class ErrorDao {
-  @Inject
-  @Mapper
   ErrorMap errorMapper;
   
   public Error consultarErrorById(Integer idError) {

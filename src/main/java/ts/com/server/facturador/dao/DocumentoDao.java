@@ -5,15 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.ManagedBean;
-import javax.inject.Inject;
-import org.mybatis.cdi.Mapper;
 import sistema.facturador.mybatis.mappers.DocumentoMap;
 import sistema.facturador.persistence.Documento;
 
 @ManagedBean
 public class DocumentoDao {
-  @Inject
-  @Mapper
   DocumentoMap documentoMapper;
   
   public List<Documento> consultarBandejaPorId(Documento documento) {

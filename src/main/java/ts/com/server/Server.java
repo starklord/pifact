@@ -82,7 +82,7 @@ public class Server {
         String ip     = "154.53.32.33";
         // String ip      = "localhost";
         String port     = "7077";
-        String db_name  = "pifactdb";
+        String db_name  = "copacabanadb";
         Server.DB_PWD   = "evadb7007";
         //------------------------------------------------
         Server.DB_DRIVER = "org.postgresql.Driver";

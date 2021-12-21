@@ -20,7 +20,7 @@ public class ErrorServiceImpl implements ErrorService {
     public Error consultarErrorById(int idError) {
         List<Error> list =  new ArrayList<>();
         try {
-            list = CRUD.list(Error.class,"where cod_cataerro = " + idError);
+            list = CRUD.list(Error.class,"where cod_cataerro = '" + idError+"'");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

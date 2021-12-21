@@ -31,8 +31,8 @@ public class LoginView extends LoginUI {
             lbxSucursales.setItems(sucursales);
             lbxEmpresas.setValue(empresas.get(0));
             lbxSucursales.setValue(sucursales.get(0));
-            // txtUser.setValue("admin");
-            // txtPass.setValue("123456");
+            txtUser.setValue("admin");
+            txtPass.setValue("123456");
         } catch (Exception ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
         }
