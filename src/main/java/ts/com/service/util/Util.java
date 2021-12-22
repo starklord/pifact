@@ -1,7 +1,12 @@
 package ts.com.service.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -10,6 +15,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
 
 public class Util {
 
@@ -75,9 +82,9 @@ public class Util {
     public static int BUSCAR_PRODUCTO_DESCRIPCION = 2;
     public static int BUSCAR_PRODUCTO_SERIE = 3;
 
-    public static final SimpleDateFormat SDF_HOURS         = new SimpleDateFormat("HH:mm:ss");
-    public static final SimpleDateFormat SDF_DATE_HOURS         = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    public static final SimpleDateFormat SDF_DATE_HOURS_SQLTE   = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    public static final SimpleDateFormat SDF_HOURS = new SimpleDateFormat("HH:mm:ss");
+    public static final SimpleDateFormat SDF_DATE_HOURS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static final SimpleDateFormat SDF_DATE_HOURS_SQLTE = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
     public static int PXH_DIF = 35;
     public static int PXW_DIF = 200;
@@ -337,6 +344,12 @@ public class Util {
             file.delete();
         }
 
+    }
+
+    public static void copyDirectory(String sourceDirectoryLocation, String destinationDirectoryLocation) throws IOException {
+        File sourceDirectory = new File(sourceDirectoryLocation);
+        File destinationDirectory = new File(destinationDirectoryLocation);
+        FileUtils.copyDirectory(sourceDirectory, destinationDirectory);
     }
 
 }

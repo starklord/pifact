@@ -8,7 +8,7 @@ import ts.com.service.util.db.client.TableDB;
  * @author Markov Huahuacondori
  */
 
-@TableDB(name = "efact.txxxx_param")
+@TableDB(name = "efact.parametro")
 public class Parametro implements Serializable {
 
     public Integer id;
@@ -20,6 +20,22 @@ public class Parametro implements Serializable {
     public String tip_para;
     public String val_para;
     public String ind_esta_para;
+    public String ruc;
+
+    public Parametro(){
+
+    }
+
+    public Parametro(String cod_para, String val_para, String nom_para) {
+        this.cod_para = cod_para;
+        this.nom_para = nom_para;
+        this.val_para = val_para;
+        this.creador = "root";
+        this.activo = true;
+        this.id_para = "PARASIST";
+        this.tip_para = "CADENA";
+        this.ind_esta_para = "1";
+    }
 
     public String getIdPara() {
         return id_para;

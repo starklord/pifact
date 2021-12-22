@@ -2,6 +2,7 @@ package ts.com.server;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
@@ -102,7 +103,7 @@ public class Server {
         CConexion.strUsr = Server.DB_USR;
     }
 
-    public String Desencriptar(String textoEncriptado) {
+    public static String Desencriptar(String textoEncriptado) {
         String secretKey = "qualityinfosolutions";
         String base64EncryptedString = "";
         try {
@@ -131,7 +132,7 @@ public class Server {
         }
     }
 
-    public String Encriptar(String texto) {
+    public static String Encriptar(String texto) {
         try {
             String secretKey = "qualityinfosolutions";
             String base64EncryptedString = "";
@@ -150,5 +151,7 @@ public class Server {
             throw new RuntimeException("Error al des encriptar", e);
         }
     }
+
+   
 
 }

@@ -5,6 +5,9 @@ import java.util.List;
 
 import ts.com.service.EmpresaService;
 import ts.com.service.model.efact.Empresa;
+import ts.com.service.model.efact.Parametro;
+import ts.com.service.util.Util;
+import ts.com.service.util.db.Update;
 import ts.com.service.util.db.server.CRUD;
 
 public class EmpresaServiceImpl implements EmpresaService {
@@ -21,13 +24,43 @@ public class EmpresaServiceImpl implements EmpresaService {
     }
 
     @Override
-    public void save(Empresa empresa) throws Exception {
-        CRUD.save(empresa);
+    public void save(Empresa empresa, List<Parametro> parametros) throws Exception {
+        try{
+            Update.beginTransaction();
+            CRUD.save(empresa);
+            for(Parametro param : parametros){
+                param.ruc = empresa.ruc;
+                CRUD.save(param);
+            }
+            Update.commitTransaction();
+        }catch(Exception ex){
+            Update.rollbackTransaction();
+            ex.printStackTrace();
+            throw new Exception(ex.getMessage());
+        }   
+    }
+
+    public void update(Empresa empresa, List<Parametro> parametros) throws Exception {
+        try{
+            Update.beginTransaction();
+            CRUD.update(empresa);
+            for(Parametro param : parametros){
+                CRUD.update(param);
+            }
+            Update.commitTransaction();
+        }catch(Exception ex){
+            Update.rollbackTransaction();
+            ex.printStackTrace();
+            throw new Exception(ex.getMessage());
+        }   
     }
 
     @Override
-    public void update(Empresa empresa) throws Exception {
-        CRUD.update(empresa);
+    public String crearDirectorioEfact(String appName) throws Exception {
+        String sourceDirectoryLocation = "/home/pisoft/fs14";
+        String destinationDirectoryLocation = "/home/pisoft/"+appName;
+        Util.copyDirectory(sourceDirectoryLocation, destinationDirectoryLocation);
+        return destinationDirectoryLocation+"/fs14";
     }
     
 }

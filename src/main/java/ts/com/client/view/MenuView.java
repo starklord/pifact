@@ -61,27 +61,17 @@ public class MenuView extends MenuUI {
     }
 
     @Override
-    public void onParametro() {
-        this.appLayout.setContent(new ParametroView());
-    }
-
-    @Override
     public void onParametros() {
         if(parametrosView==null){
-            parametrosView = new ParametrosView();
+            parametrosView = new ParametrosView(this.appLayout);
         }
         this.appLayout.setContent(parametrosView);
     }
 
     @Override
-    public void onEmpresa() {
-        this.appLayout.setContent(new EmpresaView());
-    }
-
-    @Override
     public void onEmpresas() {
         if(empresasView == null){
-            empresasView = new EmpresasView();
+            empresasView = new EmpresasView(this.appLayout);
         }
         this.appLayout.setContent(empresasView);
     }

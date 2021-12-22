@@ -13,9 +13,15 @@ public class Empresa implements Serializable {
     public String ruc;
     public String razon_Social;
     public String nombre_comercial;
+    public String app_name;
+    
 
     public String getRuc() {
         return ruc;
+    }
+
+    public String getAppName(){
+        return app_name;
     }
 
     public String getRazonSocial(){
@@ -29,7 +35,7 @@ public class Empresa implements Serializable {
 
     @Override
     public String toString() {
-        return ruc;
+        return ruc+"-"+app_name;
     }
 
     @Override

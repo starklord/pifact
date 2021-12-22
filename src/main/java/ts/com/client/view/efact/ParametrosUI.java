@@ -6,11 +6,12 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import ts.com.client.component.ListBox;
 import ts.com.client.component.PanelUI;
 import ts.com.client.component.PiTable;
+import ts.com.service.model.efact.Empresa;
 import ts.com.service.model.efact.Parametro;
 
 public class ParametrosUI extends PanelUI {
 
-    public final ListBox<String> lbxRucs = new ListBox<>("Empresas");
+    public final ListBox<Empresa> lbxRucs = new ListBox<>("Empresas");
     public final PiTable<Parametro> tbl  = new PiTable<>(true, false);
 
     public ParametrosUI() {

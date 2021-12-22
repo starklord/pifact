@@ -28,12 +28,8 @@ public abstract class MenuUI extends VerticalLayout {
         public PiTab tabCambiarClave            = new PiTab(VaadinIcon.KEY, "Cambiar Clave", this::onCambiarClave);
         public PiTab tabAcercaDe                = new PiTab(VaadinIcon.KEY, "Acerca De", this::onAcercaDe);
         public PiTab tabSalir                   = new PiTab(VaadinIcon.KEY, "Salir", this::onSalir);
-        
-        // Empresas
-        public PiTab tabEmpresa         = new PiTab(VaadinIcon.PLUS, "Nueva Empresa", this::onEmpresa);
+
         public PiTab tabEmpresas        = new PiTab(VaadinIcon.BUILDING, "Empresas", this::onEmpresas);
-        // Parametros
-        public PiTab tabParametro      = new PiTab(VaadinIcon.PLUS     ,"Nuevo Parametro", this::onParametro);
         public PiTab tabParametros      = new PiTab(VaadinIcon.BULLETS  ,"Parametros", this::onParametros);
         public Tab tabOpciones          = new PiTabMenu(VaadinIcon.COG, "Opciones", 
                                         tabCambiarClave,
@@ -42,9 +38,7 @@ public abstract class MenuUI extends VerticalLayout {
         public MenuUI() {
                 final Tabs tabs = new Tabs(
                         tabOpciones,
-                        tabEmpresa,
                         tabEmpresas,
-                        tabParametro,
                         tabParametros,
                         tabSalir
                         );
@@ -73,8 +67,6 @@ public abstract class MenuUI extends VerticalLayout {
         public abstract void onAcercaDe();
         public abstract void onCambiarClave();
         public abstract void onSalir();
-        public abstract void onEmpresa();
         public abstract void onEmpresas();
-        public abstract void onParametro();
         public abstract void onParametros();
 }

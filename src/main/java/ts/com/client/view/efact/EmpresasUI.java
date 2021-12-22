@@ -13,10 +13,11 @@ public class EmpresasUI extends PanelUI {
 
     public EmpresasUI() {
         super(VaadinIcon.BUILDING,"Relacion de Empresas");
-        tbl.addCol(Empresa::getRuc, "RUC");
-        tbl.addCol(Empresa::getRazonSocial, "Razon Social");
-        tbl.addCol(Empresa::getNombreComercial, "Nombre Comercial");
-        getToolBar().add(getBtnRefresh());
+        tbl.addCol(Empresa::getAppName          , "Nombre de la aplicación");
+        tbl.addCol(Empresa::getRuc              , "RUC");
+        tbl.addCol(Empresa::getRazonSocial      , "Razon Social");
+        tbl.addCol(Empresa::getNombreComercial  , "Nombre Comercial");
+        getToolBar().add(getBtnEdit(), getBtnAdd(),getBtnRefresh());
         getHeader().add(getToolBar());
         getBody().add(tbl);
         

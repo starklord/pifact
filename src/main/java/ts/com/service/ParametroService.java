@@ -20,5 +20,6 @@ public interface ParametroService {
     public void insertarParametro(Parametro parametro)throws Exception;
 
     public void actualizarParametro(Parametro parametro)throws Exception;
+    public Parametro getParametro(String cod_para, String ruc) throws Exception;
     
 }

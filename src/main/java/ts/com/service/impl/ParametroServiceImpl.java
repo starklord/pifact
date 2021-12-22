@@ -51,4 +51,11 @@ public class ParametroServiceImpl implements ParametroService {
         CRUD.update(parametro);
     }
 
+    @Override
+    public Parametro getParametro(String cod_para, String ruc) throws Exception {
+        String where = "where cod_para = '"+cod_para+"' and ruc='"+ruc+"'";
+        List<Parametro> list = CRUD.list(Parametro.class, where);
+        return list.isEmpty()?null:list.get(0);
+    }
+
 }
