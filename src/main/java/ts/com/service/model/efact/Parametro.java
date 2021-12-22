@@ -21,6 +21,30 @@ public class Parametro implements Serializable {
     public String val_para;
     public String ind_esta_para;
 
+    public String getIdPara() {
+        return id_para;
+    }
+
+    public String getCodPara() {
+        return cod_para;
+    }
+
+    public String getNomPara(){
+        return nom_para;
+    }
+
+    public String getTipPara() {
+        return tip_para;
+    }
+
+    public String getValPara() {
+        return val_para;
+    }
+
+    public String getIndEstaPara() {
+        return ind_esta_para;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;

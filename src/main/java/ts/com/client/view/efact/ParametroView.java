@@ -1,8 +1,5 @@
-package ts.com.client.view.parametro;
+package ts.com.client.view.efact;
 
-import ts.com.client.factory.Alerts;
-import ts.com.server.Server;
-import ts.com.service.factory.Services;
 
 public class ParametroView extends ParametroUI {
 

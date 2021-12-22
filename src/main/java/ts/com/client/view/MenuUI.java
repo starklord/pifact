@@ -28,19 +28,13 @@ public abstract class MenuUI extends VerticalLayout {
         public PiTab tabCambiarClave            = new PiTab(VaadinIcon.KEY, "Cambiar Clave", this::onCambiarClave);
         public PiTab tabAcercaDe                = new PiTab(VaadinIcon.KEY, "Acerca De", this::onAcercaDe);
         public PiTab tabSalir                   = new PiTab(VaadinIcon.KEY, "Salir", this::onSalir);
- 
-        // FACTURACION ELECTRONICA
-        public PiTab tabComprobantes    =   new PiTab(VaadinIcon.INVOICE, "Comprobantes",this::onComprobantes);
-        public PiTab tabNotasCredito    =   new PiTab(VaadinIcon.FILE, "Notas de Crédito",this::onNotasCredito);
-        public PiTab tabNotasDebito     =   new PiTab(VaadinIcon.FILE_O, "Notas de Débito" ,this::onNotasDebito);
         
-        // Mantenimiento
-        public PiTab tabMantenimiento   =   new PiTab(VaadinIcon.TOOLS, "Mantenimiento" ,this::onMantenimiento);
-
-        public PiTabMenu tabEfact       =  new PiTabMenu(VaadinIcon.INVOICE,"Facturacion",
-        tabComprobantes,tabNotasCredito,tabNotasDebito
-        );
-
+        // Empresas
+        public PiTab tabEmpresa         = new PiTab(VaadinIcon.PLUS, "Nueva Empresa", this::onEmpresa);
+        public PiTab tabEmpresas        = new PiTab(VaadinIcon.BUILDING, "Empresas", this::onEmpresas);
+        // Parametros
+        public PiTab tabParametro      = new PiTab(VaadinIcon.PLUS     ,"Nuevo Parametro", this::onParametro);
+        public PiTab tabParametros      = new PiTab(VaadinIcon.BULLETS  ,"Parametros", this::onParametros);
         public Tab tabOpciones          = new PiTabMenu(VaadinIcon.COG, "Opciones", 
                                         tabCambiarClave,
                                         tabAcercaDe);
@@ -48,8 +42,10 @@ public abstract class MenuUI extends VerticalLayout {
         public MenuUI() {
                 final Tabs tabs = new Tabs(
                         tabOpciones,
-                        tabEfact,
-                        tabMantenimiento,
+                        tabEmpresa,
+                        tabEmpresas,
+                        tabParametro,
+                        tabParametros,
                         tabSalir
                         );
 
@@ -77,8 +73,8 @@ public abstract class MenuUI extends VerticalLayout {
         public abstract void onAcercaDe();
         public abstract void onCambiarClave();
         public abstract void onSalir();
-        public abstract void onComprobantes();
-        public abstract void onNotasCredito();
-        public abstract void onNotasDebito();
-        public abstract void onMantenimiento();
+        public abstract void onEmpresa();
+        public abstract void onEmpresas();
+        public abstract void onParametro();
+        public abstract void onParametros();
 }

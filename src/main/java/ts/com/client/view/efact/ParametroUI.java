@@ -1,4 +1,4 @@
-package ts.com.client.view.parametro;
+package ts.com.client.view.efact;
 
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -6,9 +6,7 @@ import com.vaadin.flow.component.formlayout.FormLayout.ResponsiveStep;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.IntegerField;
 
-import ts.com.client.component.Button;
 import ts.com.client.component.Label;
-import ts.com.client.component.ListBox;
 import ts.com.client.component.PanelUI;
 import ts.com.client.component.TextBox;
 
@@ -49,7 +47,7 @@ public abstract class ParametroUI extends PanelUI {
     );
     
     public ParametroUI() {
-        super(VaadinIcon.TOOLS, "Mantenimiento del Sistema");
+        super(VaadinIcon.BULLETS, "Parametros de Empresa");
         getBody().add(lblEmpresa,pnlEmpresa,lblSucursal,pnlSucursal,getToolBar());
         getToolBar().add(getBtnSave(),getBtnClose());
         initStyles();

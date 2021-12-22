@@ -4,9 +4,9 @@
  */
 package ts.com.service.factory;
 
-import ts.com.service.ErrorService;
+import ts.com.service.EmpresaService;
 import ts.com.service.ParametroService;
-import ts.com.service.impl.ErrorServiceImpl;
+import ts.com.service.impl.EmpresaServiceImpl;
 import ts.com.service.impl.ParametroServiceImpl;
 
 /**
@@ -16,15 +16,13 @@ import ts.com.service.impl.ParametroServiceImpl;
 public class Services {
     
     private static final ParametroService parametro             = new ParametroServiceImpl();
-    private static final ErrorService error                 = new ErrorServiceImpl();
+    private static final EmpresaService empresa         = new EmpresaServiceImpl();
 
     public static ParametroService getParametro() {
         return parametro;
     }
-
-    public static ErrorService getError() {
-        return error;
+    
+    public static EmpresaService getEmpresa() {
+        return empresa;
     }
-    
-    
 }
