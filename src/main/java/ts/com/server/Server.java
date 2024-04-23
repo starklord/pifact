@@ -87,7 +87,7 @@ public class Server {
     public static void initDB() {
         System.out.println("inicializando datos de la base de datos...");
 
-        String ip = "154.53.32.33";
+        String ip = "192.168.0.150";
         // String ip = "localhost";
         String port = "7077";
         String db_name = "pifactdb";
@@ -151,7 +151,5 @@ public class Server {
             throw new RuntimeException("Error al des encriptar", e);
         }
     }
-
-   
 
 }

@@ -16,7 +16,7 @@ public class EmpresaServiceImpl implements EmpresaService {
     public List<Empresa> listEmpresas() {
         List<Empresa> list = new ArrayList<>();
         try {
-            list =  CRUD.list(Empresa.class);
+            list = CRUD.list(Empresa.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -25,42 +25,47 @@ public class EmpresaServiceImpl implements EmpresaService {
 
     @Override
     public void save(Empresa empresa, List<Parametro> parametros) throws Exception {
-        try{
+        try {
             Update.beginTransaction();
             CRUD.save(empresa);
-            for(Parametro param : parametros){
+            for (Parametro param : parametros) {
                 param.ruc = empresa.ruc;
                 CRUD.save(param);
             }
             Update.commitTransaction();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             Update.rollbackTransaction();
             ex.printStackTrace();
             throw new Exception(ex.getMessage());
-        }   
+        }
     }
 
     public void update(Empresa empresa, List<Parametro> parametros) throws Exception {
-        try{
+        try {
             Update.beginTransaction();
             CRUD.update(empresa);
-            for(Parametro param : parametros){
+            for (Parametro param : parametros) {
                 CRUD.update(param);
             }
             Update.commitTransaction();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             Update.rollbackTransaction();
             ex.printStackTrace();
             throw new Exception(ex.getMessage());
-        }   
+        }
     }
 
     @Override
     public String crearDirectorioEfact(String appName) throws Exception {
-        String sourceDirectoryLocation = "/home/pisoft/fs14";
-        String destinationDirectoryLocation = "/home/pisoft/"+appName;
+        // String sourceDirectoryLocation = "/home/eva/pifact/SFS21";
+        // String destinationDirectoryLocation = "/home/eva/pifact/" + appName +
+        // "/SFS21";
+        // Util.copyDirectory(sourceDirectoryLocation, destinationDirectoryLocation);
+        // return destinationDirectoryLocation;
+        String sourceDirectoryLocation = "/home/eva/pifact/SFS21";
+        String destinationDirectoryLocation = "/var/lib/tomcat9/webapps/pifact/" + appName + "/SFS21";
         Util.copyDirectory(sourceDirectoryLocation, destinationDirectoryLocation);
-        return destinationDirectoryLocation+"/fs14";
+        return destinationDirectoryLocation;
     }
-    
+
 }

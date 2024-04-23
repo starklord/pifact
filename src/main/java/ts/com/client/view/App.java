@@ -1,7 +1,5 @@
 package ts.com.client.view;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -15,6 +13,7 @@ import com.vaadin.flow.server.VaadinService;
 import com.vaadin.flow.server.VaadinServletRequest;
 import com.vaadin.flow.server.VaadinSession;
 
+import jakarta.servlet.http.HttpServletRequest;
 import ts.com.client.component.Label;
 import ts.com.server.Server;
 import ts.com.service.factory.Services;
